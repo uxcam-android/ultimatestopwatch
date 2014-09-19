@@ -12,7 +12,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.support.v4.view.ViewPager;
-import android.view.MotionEvent;
 import android.widget.ImageView;
 
 import com.actionbarsherlock.app.ActionBar;
@@ -56,6 +55,8 @@ public class UltimateStopwatchActivity extends SherlockFragmentActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
+        UXCam.startApplication(this);
 
         getWindow().setBackgroundDrawable(null);
 
@@ -101,7 +102,6 @@ public class UltimateStopwatchActivity extends SherlockFragmentActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        UXCam.pause();
 
         mWakeLock.release();
 
@@ -122,24 +122,6 @@ public class UltimateStopwatchActivity extends SherlockFragmentActivity {
         LapTimeRecorder.getInstance().saveTimes(this);
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        UXCam.start(this);
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        UXCam.stop();
-    }
-
-
-    @Override
-    public boolean dispatchTouchEvent(MotionEvent event) {
-        UXCam.dispatchTouchEvent(event);
-        return super.dispatchTouchEvent(event);
-    }
 
     @Override
     protected void onResume() {
