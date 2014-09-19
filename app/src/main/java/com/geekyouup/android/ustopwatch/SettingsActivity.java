@@ -4,11 +4,9 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Vibrator;
-import android.view.MotionEvent;
 import android.widget.CompoundButton;
 
 import com.actionbarsherlock.app.SherlockActivity;
-import com.uxcam.lib.UXCam;
 
 public class SettingsActivity extends SherlockActivity {
 
@@ -77,7 +75,6 @@ public class SettingsActivity extends SherlockActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        UXCam.pause();
         SharedPreferences settings = getSharedPreferences(UltimateStopwatchActivity.PREFS_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = settings.edit();
 
@@ -112,23 +109,4 @@ public class SettingsActivity extends SherlockActivity {
         return isAnimating;
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        UXCam.start(this);
-
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        UXCam.stop();
-    }
-
-
-    @Override
-    public boolean dispatchTouchEvent(MotionEvent event) {
-        UXCam.dispatchTouchEvent(event);
-        return super.dispatchTouchEvent(event);
-    }
 }
