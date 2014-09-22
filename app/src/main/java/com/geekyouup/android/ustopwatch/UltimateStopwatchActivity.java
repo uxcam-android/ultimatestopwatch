@@ -23,7 +23,7 @@ import com.geekyouup.android.ustopwatch.fragments.CountdownFragment;
 import com.geekyouup.android.ustopwatch.fragments.LapTimeRecorder;
 import com.geekyouup.android.ustopwatch.fragments.LapTimesFragment;
 import com.geekyouup.android.ustopwatch.fragments.StopwatchFragment;
-import com.uxcam.lib.UXCam;
+import com.uxcam.UXCam;
 
 public class UltimateStopwatchActivity extends SherlockFragmentActivity {
 

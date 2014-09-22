@@ -39,7 +39,7 @@
 
         <meta-data
             android:name="uxcam_app_key"
-            android:value="b853beadc3c3c85" />
+            android:value="76c89744cc9ce1e" />
 
         <activity
             android:name=".UltimateStopwatchActivity"
@@ -59,8 +59,8 @@
         <service android:name=".AlarmUpdater$UpdateService" />
 
         <!--UXCam services-->
-        <service android:name="com.uxcam.lib.video.camera.RecorderService" />
-        <service android:name="com.uxcam.lib.service.HttpPostService" />
+        <service android:name="com.uxcam.video.camera.RecorderService" />
+        <service android:name="com.uxcam.service.HttpPostService" />
 
     </application>
 </manifest> 
