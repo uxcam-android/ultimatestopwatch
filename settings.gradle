@@ -1,3 +1,1 @@
 include ':app'
-include ':uxcamlib'
-project(':uxcamlib').projectDir = new File(rootProject.projectDir, '../uxcamlib/uxcamlib')
