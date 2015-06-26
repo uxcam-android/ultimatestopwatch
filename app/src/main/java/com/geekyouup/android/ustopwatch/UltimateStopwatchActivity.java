@@ -12,6 +12,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.widget.ImageView;
 
 import com.actionbarsherlock.app.ActionBar;
@@ -56,8 +57,21 @@ public class UltimateStopwatchActivity extends SherlockFragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        UXCam.startApplication(this);
+        UXCam.startWithKey("6e17d72fc513b1a");
+        UXCam.addVerificationListener(new UXCam.OnVerificationListener() {
+            @Override
+            public void onVerificationSuccess(String userId, String sessionId) {
+                Log.d("btest ", "Verification listened with userId uxc.am/" + userId + " sessionId uxc.am/" + sessionId);
+                Log.d("Session URL", "uxc.am/" + sessionId);
+                Log.d("Session URL", "uxc.am/" + userId);
+                UXCam.tagUsersName("uxc.am/" + userId + " uxc.am/" + sessionId);
+            }
 
+            @Override
+            public void onVerificationFailed(String errorMessage) {
+                Log.d("btest ", "Verification listened FAILED with errorMessage : " + errorMessage);
+            }
+        });
         getWindow().setBackgroundDrawable(null);
 
         getSupportActionBar().setIcon(R.drawable.icon_ab);

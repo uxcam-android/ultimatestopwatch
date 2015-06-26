@@ -12,7 +12,7 @@ android {
 
     buildTypes {
         release {
-            runProguard false
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
@@ -29,5 +29,5 @@ repositories {
 dependencies {
     compile 'com.android.support:support-v4:20.0.+'
     compile 'com.actionbarsherlock:actionbarsherlock:4.4.0@aar'
-    compile files('libs/uxcam-1.0.9.jar')
+    compile files('libs/uxcam-2.0.4.jar')
 }
